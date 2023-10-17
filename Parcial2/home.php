@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/code.jquery.com_jquery-3.7.1.min.js"></script>
 </head>
 <body>
   <?php include 'conexion.php'; ?>
@@ -25,13 +26,13 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            opciones
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Buscar </a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+          <ul class="dropdown-menu" aria-labelledby="nabvarDropdown">
+            <li><a class="dropdown-item" href="inicio.php">Inicio</a></li>
+            <li><a class="dropdown-item" href="ConsultarAlumnos.php">Consultar Alumnos</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Registrar Alumno</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -40,7 +41,7 @@
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
       </form>
     </div>
   </div>
@@ -50,7 +51,7 @@
     <div class="card m-2">
         <h1>Sistema de gestion de control escolar</h1>
         <h3>CETIS 107</h3>
-        <img src="DGETI_logo.png" alt="" width="20%" class="img-fluid">
+        <center><img src="DGETI_logo.png" alt="" width="20%" class="img-fluid"></center>
     </div>
   </div>
 </div>
@@ -58,5 +59,6 @@
 <footer class="text-center">
     <span>Cetis 107 web App &copy;2023</span>  
 </footer>
+<script src="js/bootstrap.js"></script>
 </body>
 </html>
