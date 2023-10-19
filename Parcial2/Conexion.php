@@ -3,6 +3,7 @@
 $server="localhost";
 $user="root";
 $password="";
+$baseDatos="cetis107"
 
 $conexion=new mysqli($server, $user, $password);
 

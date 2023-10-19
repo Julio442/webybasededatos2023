@@ -7,7 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
+    <?php while $registro = $datos =fetch_assoc(){
+        
+    }
         include 'home.php';
         include 'Conexion';
 
