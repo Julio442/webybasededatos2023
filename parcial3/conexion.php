@@ -1,6 +1,6 @@
 <?php
 
-    $server     = "localhost"; 
+    $server     = "localhost"; //para XAMPP es solo "localhost"
     $user       = "root";
     $password   = "";
     $baseDatos  = "cetis107";
