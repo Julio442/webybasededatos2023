@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 14-11-2023 a las 03:14:54
--- Versión del servidor: 10.1.39-MariaDB
--- Versión de PHP: 7.3.5
+-- Host: 127.0.0.1
+-- Generation Time: Nov 23, 2023 at 03:27 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `cetis107`
+-- Database: `cetis107`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `alumnos`
+-- Table structure for table `alumnos`
 --
 
 CREATE TABLE `alumnos` (
@@ -36,34 +35,35 @@ CREATE TABLE `alumnos` (
   `edad` int(11) NOT NULL,
   `turno` varchar(10) NOT NULL,
   `sexo` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Volcado de datos para la tabla `alumnos`
+-- Dumping data for table `alumnos`
 --
 
 INSERT INTO `alumnos` (`id`, `nombre`, `numero_control`, `semestre`, `edad`, `turno`, `sexo`) VALUES
-(1, 'OHMEESTACOMIENDO', '44444442', 5, 18, 'MATUTINO', 1),
-(2, 'PAPU', '98798789', 4, 19, 'Matutino', 1),
-(3, 'ETESECH', '576576576', 2, 15, 'Vespertino', 0),
-(4, 'ELPEPE', '234234234', 4, 20, 'MATUTINO', 1);
+(1, 'Jair Emmanuel Moreno Blanco', '21325061070546', 5, 17, 'Vespertino', 1),
+(2, 'Itzel Amairany Serrano Gonzalez', '213250610708305', 5, 17, 'Vespertino', 0),
+(3, 'Dylan Olek Arce Monobe', '21325061070483', 5, 16, 'Vespertino', 1),
+(4, 'Julio Esteban Beltran Cardenas', '21325061070428', 5, 16, 'Vespertino', 1),
+(5, 'Erik David Rodriguez Mesa', '21325061070582', 5, 17, 'Vespertino', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `alumno_materia`
+-- Table structure for table `alumnos_materias`
 --
 
-CREATE TABLE `alumno_materia` (
+CREATE TABLE `alumnos_materias` (
   `id` bigint(20) NOT NULL,
-  `alumno_id` bigint(20) NOT NULL,
-  `materia` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `alumnos_id` bigint(20) NOT NULL,
+  `materias_id` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `materias`
+-- Table structure for table `materias`
 --
 
 CREATE TABLE `materias` (
@@ -71,50 +71,53 @@ CREATE TABLE `materias` (
   `nombre` varchar(100) NOT NULL,
   `semestre` int(11) NOT NULL,
   `especialidad` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Índices para tablas volcadas
+-- Dumping data for table `materias`
+--
+
+INSERT INTO `materias` (`id`, `nombre`, `semestre`, `especialidad`) VALUES
+(0, 'Calculo diferencial', 3, 'Ofimatica'),
+(1, 'Bases de datos', 5, 'Programacion'),
+(2, 'Leoye', 1, 'Electronica');
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `alumnos`
+-- Indexes for table `alumnos`
 --
 ALTER TABLE `alumnos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `alumno_materia`
+-- Indexes for table `alumnos_materias`
 --
-ALTER TABLE `alumno_materia`
+ALTER TABLE `alumnos_materias`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `materias`
+-- Indexes for table `materias`
 --
 ALTER TABLE `materias`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `alumnos`
+-- AUTO_INCREMENT for table `alumnos`
 --
 ALTER TABLE `alumnos`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `alumno_materia`
+-- AUTO_INCREMENT for table `alumnos_materias`
 --
-ALTER TABLE `alumno_materia`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `materias`
---
-ALTER TABLE `materias`
+ALTER TABLE `alumnos_materias`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
